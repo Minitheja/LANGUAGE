@@ -17,32 +17,99 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Specific tweaks for standalone contact page */
+        /* Final High-Precision Symmetry Tweaks */
         body {
-            background-color: #F8FAFC;
+            background-color: #F8FAFC !important;
         }
 
         #navbar {
-            background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            padding: 15px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            position: relative;
-            /* Not fixed for this simple page if preferred, but keeping fixed for consistency */
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(15px) !important;
+            padding: 12px 0 !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+            position: sticky !important;
+            top: 0;
+            z-index: 1000;
         }
 
         #navbar .logo,
-        #navbar .nav-links li a,
-        #navbar .menu-toggle {
+        #navbar .nav-links li a {
             color: var(--text-main) !important;
         }
 
-        #navbar .logo span {
-            color: var(--secondary) !important;
+        .contact-page-wrapper {
+            padding: 30px 0 60px !important;
         }
 
-        .contact-page-wrapper {
-            padding: 100px 0;
+        .contact-header {
+            text-align: center !important;
+            max-width: 650px;
+            margin: 0 auto 40px !important;
+        }
+
+        .contact-header h1 {
+            font-size: 2.8rem !important;
+            font-weight: 800 !important;
+            margin-bottom: 12px !important;
+            color: var(--text-main);
+        }
+
+        .contact-header p {
+            font-size: 1.05rem !important;
+            color: var(--text-muted);
+        }
+
+        /* Strict 50/50 Split & Same Height */
+        .contact-container {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 30px !important;
+            align-items: stretch !important;
+            max-width: 1100px !important;
+            margin: 0 auto !important;
+        }
+
+        .contact-info,
+        .contact-form-box {
+            display: flex !important;
+            flex-direction: column !important;
+            height: 100% !important;
+        }
+
+        .contact-details {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px !important;
+            height: 100% !important;
+        }
+
+        .detail-item {
+            background: #FFFFFF;
+            padding: 22px 25px !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+            flex: 1 !important;
+            display: flex !important;
+            align-items: center !important;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .contact-form-box {
+            background: #FFFFFF !important;
+            padding: 35px !important;
+            border-radius: 25px !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04) !important;
+            justify-content: center !important;
+        }
+
+        .form-group {
+            margin-bottom: 12px !important;
+        }
+
+        @media (max-width: 900px) {
+            .contact-container {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -70,74 +137,76 @@
     </nav>
 
     <main class="contact-page-wrapper">
-        <!-- Contact Section -->
-        <section id="contact" class="section revealed">
-            <div class="contact-bg-pattern"></div>
-            <div class="container contact-container">
-                <div class="contact-info">
-                    <div class="section-title" style="text-align: left; margin-bottom: 20px;">
-                        <h2>Get in touch</h2>
-                        <p>We’re here to help! Tell us what you need, and an expert will get back to you within 24
-                            hours.</p>
-                    </div>
-                    <div class="contact-details">
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h5>Address</h5>
-                                <p>Gyrfalcon Avenue 10, 1170 Watermael-Boitsfort, Brussels, Belgium.</p>
-                                <p>Avenue Eiffel 8, 1300 Wavre, Belgium.</p>
-                                <p>Tartu mnt 67/1, 10115 Tallinn, Estonia.</p>
-                                <p><strong>Development Centre:</strong> 2nd floor, Deepa building, road, near VIT,
-                                    Vellore 632014, India</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h5>Send us an email</h5>
-                                <p><a href="mailto:info@digimabble.com">info@digimabble.com</a></p>
-                                <p><a href="mailto:contact@infodigimabble.com">contact@infodigimabble.com</a></p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h5>Give us a call</h5>
-                                <p>+32 467 85 99 60</p>
-                                <p>+32 466 08 86 41</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form-box">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                    <div id="form-success" class="form-success-msg">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Thank you! Your message has been sent successfully.</p>
-                    </div>
-                </div>
+        <div class="container">
+            <!-- Centered Header -->
+            <div class="contact-header">
+                <h1>Get in touch</h1>
+                <p>We’re here to help! Tell us what you need, and an expert will get back to you within 24 hours.</p>
             </div>
-        </section>
+
+            <!-- Contact Content Grid -->
+            <section id="contact" class="revealed" style="padding: 0; background: none; opacity: 1 !important;">
+                <div class="contact-bg-pattern"></div>
+                <div class="contact-container">
+                    <!-- 50% Info Side -->
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h5>Global Headquarters</h5>
+                                    <p>Brussels, Belgium | Wavre, Belgium | Tallinn, Estonia</p>
+                                    <p style="font-size: 0.9rem; margin-top: 8px; color: var(--secondary);">
+                                        <strong>Development Centre:</strong> Vellore, India
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>Email Support</h5>
+                                    <p><a href="mailto:info@digimabble.com">info@digimabble.com</a></p>
+                                    <p><a href="mailto:contact@infodigimabble.com">contact@infodigimabble.com</a></p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h5>Phone Inquiries</h5>
+                                    <p>+32 467 85 99 60</p>
+                                    <p>+32 466 08 86 41</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 50% Form Side -->
+                    <div class="contact-form-box">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5" placeholder="Your Message" required
+                                    style="resize: none;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; padding: 15px; font-weight: 700;">Send Message</button>
+                        </form>
+                        <div id="form-success" class="form-success-msg">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Thank you! Your message has been sent successfully.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
