@@ -58,13 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 formSuccess.style.display = 'block';
 
                 // Optionally reset form after some time and show again
-                /*
-                setTimeout(() => {
-                    formSuccess.style.display = 'none';
-                    contactForm.style.display = 'block';
-                    contactForm.reset();
-                }, 5000);
-                */
             } else {
                 alert('Please fill in all fields.');
             }
@@ -81,77 +74,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Scroll Spy: Highlight active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-links li a');
-
-    const scrollSpyOptions = {
-        threshold: 0.5,
-        rootMargin: "-80px 0px 0px 0px"
-    };
-
-    const scrollSpyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navItems.forEach(item => {
-                    item.classList.toggle('nav-active', item.getAttribute('href') === `#${id}`);
-                });
-            }
-        });
-    }, scrollSpyOptions);
-
-    sections.forEach(section => scrollSpyObserver.observe(section));
-
-    // Intersection Observer for Reveal Animations
-    const revealOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, revealOptions);
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-        revealObserver.observe(el);
-    });
-
-    // Live Stats Counter Logic
-    function animateValue(obj, start, end, duration) {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }
-        };
-        window.requestAnimationFrame(step);
-    }
-
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counters = entry.target.querySelectorAll('.stat-number');
-                counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    animateValue(counter, 0, target, 2000);
-                });
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    const statsSection = document.querySelector('.live-stats');
-    if (statsSection) {
-        statsObserver.observe(statsSection);
-    }
 });

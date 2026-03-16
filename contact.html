@@ -16,105 +16,9 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Final High-Precision Symmetry Tweaks */
-        body {
-            background-color: #F8FAFC !important;
-        }
-
-        #navbar {
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            backdrop-filter: blur(15px) !important;
-            padding: 12px 0 !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
-            position: sticky !important;
-            top: 0;
-            z-index: 1000;
-        }
-
-        #navbar .logo,
-        #navbar .nav-links li a {
-            color: var(--text-main) !important;
-        }
-
-        .contact-page-wrapper {
-            padding: 30px 0 60px !important;
-        }
-
-        .contact-header {
-            text-align: center !important;
-            max-width: 650px;
-            margin: 0 auto 40px !important;
-        }
-
-        .contact-header h1 {
-            font-size: 2.8rem !important;
-            font-weight: 800 !important;
-            margin-bottom: 12px !important;
-            color: var(--text-main);
-        }
-
-        .contact-header p {
-            font-size: 1.05rem !important;
-            color: var(--text-muted);
-        }
-
-        /* Strict 50/50 Split & Same Height */
-        .contact-container {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 30px !important;
-            align-items: stretch !important;
-            max-width: 1100px !important;
-            margin: 0 auto !important;
-        }
-
-        .contact-info,
-        .contact-form-box {
-            display: flex !important;
-            flex-direction: column !important;
-            height: 100% !important;
-        }
-
-        .contact-details {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 15px !important;
-            height: 100% !important;
-        }
-
-        .detail-item {
-            background: #FFFFFF;
-            padding: 22px 25px !important;
-            border-radius: 20px !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
-            flex: 1 !important;
-            display: flex !important;
-            align-items: center !important;
-            border: 1px solid rgba(0, 0, 0, 0.02);
-        }
-
-        .contact-form-box {
-            background: #FFFFFF !important;
-            padding: 35px !important;
-            border-radius: 25px !important;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04) !important;
-            justify-content: center !important;
-        }
-
-        .form-group {
-            margin-bottom: 12px !important;
-        }
-
-        @media (max-width: 900px) {
-            .contact-container {
-                grid-template-columns: 1fr !important;
-            }
-        }
-    </style>
 </head>
 
-<body class="js-enabled">
+<body class="js-enabled contact-page">
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -199,9 +103,12 @@
                             <button type="submit" class="btn btn-primary"
                                 style="width: 100%; padding: 15px; font-weight: 700;">Send Message</button>
                         </form>
-                        <div id="form-success" class="form-success-msg">
-                            <i class="fas fa-check-circle"></i>
-                            <p>Thank you! Your message has been sent successfully.</p>
+                        <div id="form-success" class="form-success-msg"
+                            style="display: none; text-align: center; margin-top: 20px;">
+                            <i class="fas fa-check-circle"
+                                style="color: #4CAF50; font-size: 2rem; margin-bottom: 10px;"></i>
+                            <p style="color: var(--text-main); font-weight: 500;">Thank you! Your message has been sent
+                                successfully.</p>
                         </div>
                     </div>
                 </div>
